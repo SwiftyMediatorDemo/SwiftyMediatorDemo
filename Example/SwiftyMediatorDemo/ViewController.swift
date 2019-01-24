@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mediator = SwiftyMediator()
-        CaseIterable
     }
 
     @IBAction func alert(_ sender: Any) {
