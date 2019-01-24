@@ -1,30 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B8Q-db-W4p">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Tab Bar View Controller-->
+        <scene sceneID="aCB-OP-jVB">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SwiftyMediatorDemo_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="B8Q-db-W4p" customClass="TabBarViewController" customModule="SwiftyMediatorDemo_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lb7-Mv-rzU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2i8-Ht-IiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="30"/>
+        </scene>
+        <!--Alert-->
+        <scene sceneID="NEe-DU-wMV">
+            <objects>
+                <viewController storyboardIdentifier="viewController" title="Alert" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IY7-9g-sPA" customClass="ViewController" customModule="SwiftyMediatorDemo_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="HoP-Mz-Sgo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bu1-hk-mdQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="E5Q-vh-tkh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyh-Bu-qad">
+                                <rect key="frame" x="116" y="164" width="33" height="30"/>
+                                <state key="normal" title="Alert"/>
+                                <connections>
+                                    <action selector="alert:" destination="IY7-9g-sPA" eventType="touchUpInside" id="m5n-bF-Rey"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qay-Jr-bCr">
+                                <rect key="frame" x="115" y="238" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <action selector="push:" destination="IY7-9g-sPA" eventType="touchUpInside" id="2Qw-Ji-Ydm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qay-Jr-bCr" firstAttribute="top" secondItem="tyh-Bu-qad" secondAttribute="bottom" constant="44" id="ci3-Fm-syP"/>
+                            <constraint firstItem="tyh-Bu-qad" firstAttribute="top" secondItem="HoP-Mz-Sgo" secondAttribute="bottom" constant="144" id="gcQ-8e-Cnd"/>
+                            <constraint firstItem="tyh-Bu-qad" firstAttribute="leading" secondItem="E5Q-vh-tkh" secondAttribute="leading" constant="116" id="ncb-3z-9uN"/>
+                            <constraint firstItem="tyh-Bu-qad" firstAttribute="centerX" secondItem="qay-Jr-bCr" secondAttribute="centerX" id="oVc-8t-6nt"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rji-6B-rTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="332" y="29"/>
         </scene>
     </scenes>
 </document>

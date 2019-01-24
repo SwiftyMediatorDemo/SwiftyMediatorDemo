@@ -1,11 +1,17 @@
 use_frameworks!
 
 target 'SwiftyMediatorDemo_Example' do
-  pod 'SwiftyMediatorDemo', :path => '../'
+
+  pod 'SwiftyMediator'
+  pod 'MediatorTypes'
+  
+  pod 'ModuleA', :git => 'https://github.com/SwiftyMediatorDemo/ModuleA.git'
+  pod 'ModuleB', :git => 'https://github.com/SwiftyMediatorDemo/ModuleB.git'
 
   target 'SwiftyMediatorDemo_Tests' do
     inherit! :search_paths
 
-    
   end
+
 end
+

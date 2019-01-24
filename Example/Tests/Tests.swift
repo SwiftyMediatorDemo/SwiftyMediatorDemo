@@ -1,5 +1,4 @@
 import XCTest
-import SwiftyMediatorDemo
 
 class Tests: XCTestCase {
     

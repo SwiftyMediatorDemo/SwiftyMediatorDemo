@@ -1,24 +1,33 @@
 //
 //  ViewController.swift
-//  SwiftyMediatorDemo
+//  SwiftyMediatorDemo_Example
 //
-//  Created by 81556205@qq.com on 01/21/2019.
-//  Copyright (c) 2019 81556205@qq.com. All rights reserved.
+//  Created by shayuan on 2019/1/21.
+//  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
 import UIKit
+import MediatorTypes
+import SwiftyMediator
 
 class ViewController: UIViewController {
+    
+    private var mediator: SwiftyMediator!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.mediator = SwiftyMediator()
+        CaseIterable
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func alert(_ sender: Any) {
+        mediator.present(ModuleBMediatorType.showAlert(title: "Alert", message: "Hello SwiftyMediator"))
     }
+    
+    @IBAction func push(_ sender: Any) {
+        mediator.push(ModuleAMediatorType.detail(id: 2019))
+
+    }
+  
 
 }
-
