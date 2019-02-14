@@ -14,10 +14,12 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mediator = SwiftyMediator()
         
-        guard let home = mediator.viewController(of: ModuleAMediatorType.home(title: "Home")),
-            let personal = mediator.viewController(of: ModuleBMediatorType.personal(color: .blue)) else { return }
+        Mediator.register(ModuleAMediatorType.self)
+        Mediator.replace(url: "sy://detail", with: "sy://home?title=Replaced")
+        
+        guard let home = Mediator.viewController(of: "sy://home?title=Home"),
+            let personal = Mediator.viewController(of: ModuleBMediatorType.personal(color: .blue)) else { return }
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "viewController")

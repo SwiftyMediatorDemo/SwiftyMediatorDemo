@@ -12,20 +12,16 @@ import SwiftyMediator
 
 class ViewController: UIViewController {
     
-    private var mediator: SwiftyMediator!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mediator = SwiftyMediator()
     }
 
     @IBAction func alert(_ sender: Any) {
-        mediator.present(ModuleBMediatorType.showAlert(title: "Alert", message: "Hello SwiftyMediator"))
+        Mediator.present(ModuleBMediatorType.showAlert(title: "Alert", message: "Hello SwiftyMediator"))
     }
     
     @IBAction func push(_ sender: Any) {
-        mediator.push(ModuleAMediatorType.detail(id: 2019))
-
+        Mediator.push("sy://detail")
     }
   
 
